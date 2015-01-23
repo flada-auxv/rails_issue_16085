@@ -14,8 +14,8 @@
 ActiveRecord::Schema.define(version: 20150123025950) do
 
   create_table "appointments", force: true do |t|
-    t.integer  "physician_id"
-    t.integer  "patient_id"
+    t.integer  "physician_id",     null: false
+    t.integer  "patient_id",       null: false
     t.datetime "appointment_date"
     t.datetime "created_at"
     t.datetime "updated_at"

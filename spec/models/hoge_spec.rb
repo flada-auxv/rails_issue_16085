@@ -1,12 +1,15 @@
 require 'rails_helper'
 
 describe '' do
-  let(:physician) { Physician.create }
-  let(:patient) { Patient.create }
+  before do
+    Patient.create
+  end
 
   it {
     expect  {
-      physician.patients = [patient]
-    }.to raise_error(ActiveRecord::StatementInvalid)
+      physician = Physician.new
+      physician.patients = [Patient.first]
+      physician.save!
+    }.to_not raise_error
   }
 end

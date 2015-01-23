@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20150123025950) do
     t.datetime "updated_at"
   end
 
-  add_index "appointments", ["patient_id"], name: "index_appointments_on_patient_id"
-  add_index "appointments", ["physician_id"], name: "index_appointments_on_physician_id"
+  add_index "appointments", ["patient_id"], name: "index_appointments_on_patient_id", using: :btree
+  add_index "appointments", ["physician_id"], name: "index_appointments_on_physician_id", using: :btree
 
   create_table "patients", force: true do |t|
     t.string   "name"
